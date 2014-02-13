@@ -1,0 +1,46 @@
+
+.plugin-gridster.lifx .front {
+  background: #333 url('images/logo.png') center 20px;
+  background-size:   127px 127px;
+  background-repeat: no-repeat;
+  color: #FFFFFF;
+}
+.plugin-gridster.lifx FORM {
+  margin-top: 85px;
+  position: relative;
+  height: 56px;
+}
+.plugin-gridster.lifx FORM .left {
+  position: absolute;
+  top: 0; left: 0;
+}
+.plugin-gridster.lifx FORM .right {
+  position: absolute;
+  top: 0; right: 0;
+}
+
+.plugin-gridster.lifx FORM .bottom {
+  position: absolute;
+  bottom: 0; left: 0;
+}
+
+.plugin-gridster.lifx FORM INPUT[type=text] {
+  width: 100%;
+  margin: 0px auto;
+}
+
+.plugin-gridster.lifx .front .action {
+  text-align: center;
+  margin-top: 60px;
+  background: #333;
+  opacity: 0.70;
+}
+
+.plugin-gridster.lifx .front .action:hover{
+  opacity: 1;
+}
+
+.plugin-gridster.lifx .back {
+  background: #333;
+  color: #FFFFFF;
+}

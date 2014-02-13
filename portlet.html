@@ -1,0 +1,9 @@
+<% stylesheet('assets/'+key+'/portlet.css') %>
+<% 
+  var lifx = SARAH.ConfigManager.getModule(key); 
+%>
+<form action="sarah/lifx" method="GET" class="ajax">
+  <label class="radio inline left"><input type="radio"  name="on" value="true"  checked="checked"/> on</label>
+  <input class="bottom" type="text"   name="rgb"    value="FF0000"/>
+  <label class="radio inline right"><input type="radio"  name="on" value="false"  /> off</label>
+</form>

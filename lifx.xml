@@ -1,0 +1,85 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleLifx" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+  
+  <rule id="ruleLifx" scope="public">
+    <tag>out.action=new Object(); </tag> 
+    <item>SARAH</item>
+    <one-of>
+      <item>
+        <ruleref uri="#ruleLifxSpecial"/>
+        <tag>out.action = rules.ruleLifxSpecial;</tag>
+      </item>
+      <item>
+        <ruleref uri="#ruleLifxLights"/>
+        <tag>out.action = rules.ruleLifxLights;</tag>
+      </item>
+    </one-of>
+    <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/lifx";</tag>
+  </rule>
+
+
+  <rule id="ruleLifxSpecial">
+    <tag>out.action=new Object(); </tag>
+    <item repeat="0-1">
+      <one-of>
+        <item>lumiere<tag>out.action.on="true"; </tag></item>
+		    <item>light  <tag>out.action.on="true"; </tag></item>
+		    <item>we are under attack <tag>out.action.on="true"; out.action.rgb="FF0000";</tag></item>
+		    <item>red alert           <tag>out.action.on="true"; out.action.rgb="FF0000";</tag></item>
+		    <item>alerte rouge        <tag>out.action.on="true"; out.action.rgb="FF0000";</tag></item>
+		    <item>stand down          <tag>out.action.on="true"; out.action.rgb="FFFFFF";</tag></item>
+		    <item>cancel that order   <tag>out.action.on="true"; out.action.rgb="FFFFFF";</tag></item>
+		    <item>annule alerte rouge <tag>out.action.on="true"; out.action.rgb="FFFFFF";</tag></item>
+		  </one-of>
+		</item>
+  </rule>
+    
+  <rule id="ruleLifxLights">
+    <tag>out.action=new Object(); </tag>
+
+    <item repeat="0-1">
+      <one-of>
+        <item>allume <tag>out.action.on="true"; </tag></item>
+	      <item>eteins <tag>out.action.on="false";</tag></item>
+			  <item>change la couleur de   </item>
+			  <item>passe                  </item>
+			  <item>met l'ambiance lecture <tag>out.action.rgb="EEDDCC"; out.action.rgb="CCDDEE"; </tag></item>
+			  <item>met l'ambiance zen     <tag>out.action.rgb="DDDD33"; out.action.rgb="DD33DD"; </tag></item>
+			  <item>fais clignoter         <tag>out.action.effect="blink";</tag></item>
+		  </one-of>
+    </item>
+		
+    <!-- LIGHT -->
+    <item  repeat="0-1">
+		  <one-of>
+				<item>toutes les lampes        <tag>out.action.on="true";</tag></item>
+				<item>la lumiere               <tag>out.action.on="true";</tag></item>
+				<!-- 
+				<item>la lampe de la chambre   <tag>out.action.light="1";</tag></item>
+				<item>la lumiere de la chambre <tag>out.action.light="1";</tag></item>
+				<item>la lampe du lit          <tag>out.action.light="1";</tag></item>
+				<item>la lumiere du lit        <tag>out.action.light="1";</tag></item>
+				
+				<item>la lampe de la cuisine   <tag>out.action.light="2";</tag></item>
+				<item>la lampe de l'entree     <tag>out.action.light="2";</tag></item>
+				<item>la lumiere de la cuisine <tag>out.action.light="2";</tag></item>
+				<item>la lumiere de l'entree   <tag>out.action.light="2";</tag></item>
+				
+				<item>la lampe du salon        <tag>out.action.light="3";</tag></item>
+				<item>la lumiere du salon      <tag>out.action.light="3";</tag></item>
+				 -->
+			</one-of>
+	  </item>
+
+		<!-- COLOR -->
+	  <item  repeat="0-1">
+			<one-of>
+				<item>en blanc  <tag>out.action.rgb="FFFFFF";</tag></item>
+				<item>en bleu   <tag>out.action.rgb="0000FF";</tag></item>
+				<item>en rouge  <tag>out.action.rgb="FF0000";</tag></item>
+				<item>en jaune  <tag>out.action.rgb="FFCC00";</tag></item>
+				<item>en orange <tag>out.action.rgb="FF8A00";</tag></item>
+			</one-of>
+	  </item>
+		
+  </rule>
+</grammar>

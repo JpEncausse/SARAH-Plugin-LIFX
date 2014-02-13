@@ -1,0 +1,8 @@
+{
+  "modules" : { 
+    "lifx"  : {
+      "description": "Module pour lampes LIFX",
+      "version": "1.0"
+    }
+  }
+}
