@@ -99,14 +99,27 @@ exports.action = function(data, callback, config, SARAH){
   }
 console.log(data);
   // Switch On / Off
-  if (data.on == "true"){
-    console.log("Lights on");
-    lx.lightsOn(); 
-  } else { 
-    console.log("Lights off");
-    lx.lightsOff();  
-  }
-  
+console.log(data.bulbname);
+if (typeof data.bulbname ==  "") {
+	if (data.on == "true" ){
+		console.log("Lights on");
+		lx.lightsOn(); 
+	} else if (data.on == "false"){ 
+		console.log("Lights off");
+		lx.lightsOff();  
+	}
+}
+else
+{
+	if (data.on == "true" && data.bulbname){
+		lx.lightsOn(lx.getBulbidByName(data.bulbname));
+		console.log("Light on: "+data.bulbname);
+	} else if (data.on == "false" && data.bulbname){
+		lx.lightsOff(lx.getBulbidByName(data.bulbname));
+		console.log("Lights off: "+data.bulbname);
+	}
+		
+};
   // Dim Color: hue, sat, lum, whitecol, timing, (bulb)
   if (data.rgb){
     console.log("Dim "+data.rgb);
