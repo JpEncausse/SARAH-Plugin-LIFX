@@ -78,6 +78,7 @@
 				<item>en rouge  <tag>out.action.rgb="FF0000";</tag></item>
 				<item>en jaune  <tag>out.action.rgb="FFCC00";</tag></item>
 				<item>en orange <tag>out.action.rgb="FF8A00";</tag></item>
+				<item>en vert   <tag>out.action.rgb="81F79F";</tag></item>
 			</one-of>
 	  </item>
 		
