@@ -54,6 +54,7 @@
 				<item>toutes les lampes        <tag>out.action.on="true";</tag></item>
 				<item>la lumiere               <tag>out.action.on="true";</tag></item>
 				<!-- 
+				<item>la lampe	               <tag>out.action.bulbname="Salon01";</tag></item>
 				<item>la lampe de la chambre   <tag>out.action.light="1";</tag></item>
 				<item>la lumiere de la chambre <tag>out.action.light="1";</tag></item>
 				<item>la lampe du lit          <tag>out.action.light="1";</tag></item>
