@@ -121,9 +121,12 @@ else
 		
 };
   // Dim Color: hue, sat, lum, whitecol, timing, (bulb)
-  if (data.rgb){
-    console.log("Dim "+data.rgb);
-    
+  // Color: FFFFFF
+  // Timing => optionnal 
+  
+  if (data.rgb && data.bulbname) {
+    console.log("Bulb :" +data.bulbname+ " - Dim "+data.rgb+ " - Timing : "+data.timing+" s" );
+
     var rgb = hexStringToRgb(data.rgb);
     var hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
     console.log(rgb,' => ',hsl);
@@ -137,7 +140,14 @@ else
     var sat = '0x'+data.sat.toString(16);
     var lum = '0x'+data.bri.toString(16);
     
-    lx.lightsColour(hue, sat, lum, 0, 0);
+    if (data.timing) {
+	// TO DO => relation timing vs second ???
+	var timing = data.timing * 2083332;
+     } else {
+	var timing = 0;
+	}
+    
+	lx.lightsColour(hue, sat, lum, 0, timing, lx.getBulbidByName(data.bulbname));
   }
   
   return callback({}); 
