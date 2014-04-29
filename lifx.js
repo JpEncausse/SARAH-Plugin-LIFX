@@ -150,6 +150,11 @@ else
 	lx.lightsColour(hue, sat, lum, 0, timing, lx.getBulbidByName(data.bulbname));
   }
   
+   // Reboot bulb
+    if (data.reboot == "true" && data.bulbname) {
+	lx.RebootBulb(lx.getBulbidByName(data.bulbname));
+  };
+  
   return callback({}); 
   
   /*
