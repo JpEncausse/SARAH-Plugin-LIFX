@@ -155,6 +155,12 @@ else
 	lx.RebootBulb(lx.getBulbidByName(data.bulbname));
   };
   
+  // Get Bulb FW Version
+    if (data.fw_version && data.bulbname) {
+	var fw = lx.BulbFirmware(lx.getBulbidByName(data.bulbname));
+	console.log(fw);
+	};
+  
   return callback({}); 
   
   /*
