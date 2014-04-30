@@ -161,6 +161,12 @@ else
 	console.log(fw);
 	};
   
+  // Bulb Technical Info (signal, tx, temp)
+    if (data.meshinfo && data.bulbname) {
+	var mesh = lx.BulbTechInfo(lx.getBulbidByName(data.bulbname));
+	console.log(mesh);
+  };
+  
   return callback({}); 
   
   /*
